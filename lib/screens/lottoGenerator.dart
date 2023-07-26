@@ -31,9 +31,11 @@ class _LottoGeneratorState extends State<LottoGenerator> {
   List<int> numberCombination_49 = [];
   List<int> numberCombination_55 = [];
   List<int> numberCombination_58 = [];
+  bool startedFlag = false;
 
   void _generateCombination() {
     setState(() {
+      startedFlag = true;
       _clearList();
       _generateRandomCombination(ez2, 31, 2);
       _generateRandomCombination(numberCombination_42, 42, 6);
@@ -125,7 +127,9 @@ class _LottoGeneratorState extends State<LottoGenerator> {
       floatingActionButton: FloatingActionButton(
         onPressed: _generateCombination,
         tooltip: generateCombination,
-        child: const Icon(Icons.autorenew),
+        child: (!startedFlag)
+            ? const Icon(Icons.start)
+            : const Icon(Icons.autorenew),
       ), // This trailing,
     );
   }
