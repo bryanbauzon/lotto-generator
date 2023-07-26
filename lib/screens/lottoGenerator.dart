@@ -118,7 +118,7 @@ class _LottoGeneratorState extends State<LottoGenerator> {
       floatingActionButton: FloatingActionButton(
         onPressed: _generateCombination,
         tooltip: generateCombination,
-        child: const Icon(Icons.cloud),
+        child: const Icon(Icons.close),
       ), // This trailing,
     );
   }
