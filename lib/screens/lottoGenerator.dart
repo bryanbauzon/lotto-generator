@@ -1,6 +1,4 @@
 import 'dart:math';
-
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 class LottoGenerator extends StatefulWidget {
@@ -96,34 +94,24 @@ class _LottoGeneratorState extends State<LottoGenerator> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: numberCombination_45.isNotEmpty
-            ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  lottoCategory(lottoCategoryList[0], ez2.join(separateBy)),
-                  lottoCategory(lottoCategoryList[1],
-                      numberCombination_42.join(separateBy)),
-                  lottoCategory(lottoCategoryList[2],
-                      numberCombination_45.join(separateBy)),
-                  lottoCategory(lottoCategoryList[3],
-                      numberCombination_49.join(separateBy)),
-                  lottoCategory(lottoCategoryList[4],
-                      numberCombination_55.join(separateBy)),
-                  lottoCategory(lottoCategoryList[5],
-                      numberCombination_58.join(separateBy)),
-                ],
-              )
-            : AnimatedTextKit(
-                animatedTexts: [
-                  WavyAnimatedText(
-                    generateCombinationStr,
-                    textStyle: const TextStyle(fontSize: 15),
-                  ),
-                ],
-                totalRepeatCount: 4,
-                pause: const Duration(milliseconds: 1000),
-              ),
-      ),
+          child: numberCombination_45.isNotEmpty
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    lottoCategory(lottoCategoryList[0], ez2.join(separateBy)),
+                    lottoCategory(lottoCategoryList[1],
+                        numberCombination_42.join(separateBy)),
+                    lottoCategory(lottoCategoryList[2],
+                        numberCombination_45.join(separateBy)),
+                    lottoCategory(lottoCategoryList[3],
+                        numberCombination_49.join(separateBy)),
+                    lottoCategory(lottoCategoryList[4],
+                        numberCombination_55.join(separateBy)),
+                    lottoCategory(lottoCategoryList[5],
+                        numberCombination_58.join(separateBy)),
+                  ],
+                )
+              : Text(generateCombinationStr)),
       floatingActionButton: FloatingActionButton(
         onPressed: _generateCombination,
         tooltip: generateCombination,
