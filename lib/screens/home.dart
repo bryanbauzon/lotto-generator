@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/common/AppCommon.dart';
 
 import 'lottoGenerator.dart';
+import 'records.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -17,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     LottoGenerator(),
-    Text('Settings'),
+    RecordsPage(),
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -53,15 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 (_selectedIndex == 0) ? Icons.home : Icons.home_filled,
                 color: AppCommon().appThemeColor,
               ),
-              label: (_selectedIndex == 0) ? 'Home' : ''),
+              label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(
-                (_selectedIndex == 1)
-                    ? Icons.settings
-                    : Icons.settings_outlined,
+                (_selectedIndex == 1) ? Icons.list_alt : Icons.list_alt_sharp,
                 color: AppCommon().appThemeColor,
               ),
-              label: (_selectedIndex == 1) ? 'Settings' : ''),
+              label: 'Records'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: AppCommon().appThemeColor,
