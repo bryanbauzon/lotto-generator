@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 class LottoGenerator extends StatefulWidget {
@@ -11,7 +12,7 @@ class LottoGenerator extends StatefulWidget {
 
 class _LottoGeneratorState extends State<LottoGenerator> {
   final String generateCombinationStr =
-      'Tap button to Generate Lotto Combination';
+      'Tap button to Generate Lotto Combination!';
   final String generateCombination = 'Generate Combination';
 
   final String separateBy = ", ";
@@ -84,7 +85,7 @@ class _LottoGeneratorState extends State<LottoGenerator> {
         Text(
           value,
           style: const TextStyle(
-            fontSize: 28,
+            fontSize: 20,
           ),
         )
       ]);
@@ -110,15 +111,21 @@ class _LottoGeneratorState extends State<LottoGenerator> {
                       numberCombination_58.join(separateBy)),
                 ],
               )
-            : Text(
-                generateCombinationStr,
-                style: const TextStyle(fontSize: 15),
+            : AnimatedTextKit(
+                animatedTexts: [
+                  WavyAnimatedText(
+                    generateCombinationStr,
+                    textStyle: const TextStyle(fontSize: 15),
+                  ),
+                ],
+                totalRepeatCount: 4,
+                pause: const Duration(milliseconds: 1000),
               ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _generateCombination,
         tooltip: generateCombination,
-        child: const Icon(Icons.close),
+        child: const Icon(Icons.autorenew),
       ), // This trailing,
     );
   }

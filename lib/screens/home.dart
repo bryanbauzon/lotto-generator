@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     LottoGenerator(),
-    Text('ez2'),
+    Text('Settings'),
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -46,29 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      // Center(
-      //   child: numberCombination_45.isNotEmpty
-      //       ? Column(
-      //           mainAxisAlignment: MainAxisAlignment.center,
-      //           children: <Widget>[
-      //             lottoCategory(lottoCategoryList[0], ez2.join(separateBy)),
-      //             lottoCategory(lottoCategoryList[1],
-      //                 numberCombination_42.join(separateBy)),
-      //             lottoCategory(lottoCategoryList[2],
-      //                 numberCombination_45.join(separateBy)),
-      //             lottoCategory(lottoCategoryList[3],
-      //                 numberCombination_49.join(separateBy)),
-      //             lottoCategory(lottoCategoryList[4],
-      //                 numberCombination_55.join(separateBy)),
-      //             lottoCategory(lottoCategoryList[5],
-      //                 numberCombination_58.join(separateBy)),
-      //           ],
-      //         )
-      //       : Text(
-      //           generateCombinationStr,
-      //           style: const TextStyle(fontSize: 15),
-      //         ),
-      // ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -90,11 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: AppCommon().appThemeColor,
         onTap: _onItemTapped,
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _generateCombination,
-      //   tooltip: generateCombination,
-      //   child: const Icon(Icons.cloud),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
