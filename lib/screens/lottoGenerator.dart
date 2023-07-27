@@ -96,7 +96,7 @@ class _LottoGeneratorState extends State<LottoGenerator> {
                         numberCombination_58.join(Strings().separateBy)),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
+                        foregroundColor: AppCommon().white,
                         backgroundColor:
                             AppCommon().appThemeColor, // foreground
                       ),
