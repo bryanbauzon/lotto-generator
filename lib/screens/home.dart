@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/common/AppCommon.dart';
+import 'package:flutter_application_1/common/strings.dart';
 
 import 'lottoGenerator.dart';
 import 'records.dart';
@@ -35,13 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                    content: Text('Developer: Max Bryan C. Bauzon')));
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text(Strings().dev)));
               },
-              icon: const Icon(
-                Icons.info,
-                color: Colors.white,
-              ))
+              icon: Icon(Icons.info, color: AppCommon().white))
         ],
       ),
       body: Center(
@@ -54,13 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 (_selectedIndex == 0) ? Icons.home : Icons.home_filled,
                 color: AppCommon().appThemeColor,
               ),
-              label: 'Home'),
+              label: Strings().home),
           BottomNavigationBarItem(
               icon: Icon(
                 (_selectedIndex == 1) ? Icons.list_alt : Icons.list_alt_sharp,
                 color: AppCommon().appThemeColor,
               ),
-              label: 'Records'),
+              label: Strings().records),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: AppCommon().appThemeColor,

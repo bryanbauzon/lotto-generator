@@ -11,6 +11,13 @@ class LottoGenerator extends StatefulWidget {
 }
 
 class _LottoGeneratorState extends State<LottoGenerator> {
+  late bool startedFlag = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   List<String> lottoCategoryList = [
     'ez2',
     '6/42',
@@ -26,7 +33,6 @@ class _LottoGeneratorState extends State<LottoGenerator> {
   List<int> numberCombination_49 = [];
   List<int> numberCombination_55 = [];
   List<int> numberCombination_58 = [];
-  bool startedFlag = false;
 
   void _generateCombination() {
     setState(() {
