@@ -8,4 +8,13 @@ class Strings {
   final String home = 'Home';
   final String records = 'Records';
   final String dev = 'Developer: Max Bryan C. Bauzon';
+
+  final List<String> lottoCategoryList = [
+    'ez2',
+    '6/42',
+    '6/45',
+    '6/49',
+    '6/55',
+    '6/58'
+  ];
 }
