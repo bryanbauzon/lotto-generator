@@ -1,5 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/common/AppCommon.dart';
+import 'package:flutter_application_1/common/strings.dart';
 
 class LottoGenerator extends StatefulWidget {
   const LottoGenerator({super.key});
@@ -109,6 +111,15 @@ class _LottoGeneratorState extends State<LottoGenerator> {
                         numberCombination_55.join(separateBy)),
                     lottoCategory(lottoCategoryList[5],
                         numberCombination_58.join(separateBy)),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor:
+                            AppCommon().appThemeColor, // foreground
+                      ),
+                      onPressed: () {},
+                      child: Text(Strings().save),
+                    )
                   ],
                 )
               : Text(generateCombinationStr)),

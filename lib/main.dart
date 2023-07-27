@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/common/AppCommon.dart';
+import 'package:flutter_application_1/common/strings.dart';
 
 import 'screens/home.dart';
 
@@ -13,12 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lotto Generator',
+      title: Strings().appName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppCommon().appThemeColor),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Lotto Generator'),
+      home: MyHomePage(title: Strings().appName),
     );
   }
 }
