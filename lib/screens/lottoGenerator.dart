@@ -11,11 +11,6 @@ class LottoGenerator extends StatefulWidget {
 }
 
 class _LottoGeneratorState extends State<LottoGenerator> {
-  final String generateCombinationStr =
-      'Tap button to Generate Lotto Combination!';
-  final String generateCombination = 'Generate Combination';
-
-  final String separateBy = ", ";
   List<String> lottoCategoryList = [
     'ez2',
     '6/42',
@@ -100,17 +95,18 @@ class _LottoGeneratorState extends State<LottoGenerator> {
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    lottoCategory(lottoCategoryList[0], ez2.join(separateBy)),
+                    lottoCategory(
+                        lottoCategoryList[0], ez2.join(Strings().separateBy)),
                     lottoCategory(lottoCategoryList[1],
-                        numberCombination_42.join(separateBy)),
+                        numberCombination_42.join(Strings().separateBy)),
                     lottoCategory(lottoCategoryList[2],
-                        numberCombination_45.join(separateBy)),
+                        numberCombination_45.join(Strings().separateBy)),
                     lottoCategory(lottoCategoryList[3],
-                        numberCombination_49.join(separateBy)),
+                        numberCombination_49.join(Strings().separateBy)),
                     lottoCategory(lottoCategoryList[4],
-                        numberCombination_55.join(separateBy)),
+                        numberCombination_55.join(Strings().separateBy)),
                     lottoCategory(lottoCategoryList[5],
-                        numberCombination_58.join(separateBy)),
+                        numberCombination_58.join(Strings().separateBy)),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
@@ -122,10 +118,10 @@ class _LottoGeneratorState extends State<LottoGenerator> {
                     )
                   ],
                 )
-              : Text(generateCombinationStr)),
+              : Text(Strings().generateCombinationStr)),
       floatingActionButton: FloatingActionButton(
         onPressed: _generateCombination,
-        tooltip: generateCombination,
+        tooltip: Strings().generateCombinationToolTip,
         child: (!startedFlag)
             ? const Icon(Icons.start)
             : const Icon(Icons.autorenew),
